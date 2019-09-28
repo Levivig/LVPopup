@@ -1,0 +1,6 @@
+framework module LVPopup {
+  umbrella header "LVPopup-umbrella.h"
+
+  export *
+  module * { export * }
+}

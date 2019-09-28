@@ -1,5 +1,4 @@
 import XCTest
-import LVPopup
 
 class Tests: XCTestCase {
     

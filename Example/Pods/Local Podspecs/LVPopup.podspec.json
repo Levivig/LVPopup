@@ -1,0 +1,31 @@
+{
+  "name": "LVPopup",
+  "version": "0.1.0",
+  "summary": "A short description of LVPopup.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/levivig/LVPopup",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "levivig": "levivig@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/levivig/LVPopup.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source_files": "LVPopup/Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "SnapKit": [
+
+    ],
+    "SwifterSwift": [
+
+    ]
+  }
+}

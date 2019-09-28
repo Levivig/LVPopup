@@ -1,0 +1,6 @@
+framework module Pods_LVPopup_Example {
+  umbrella header "Pods-LVPopup_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
