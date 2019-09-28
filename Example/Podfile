@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LVPopup_Example' do
+  pod 'LVPopup', :path => '../'
+
+  target 'LVPopup_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
