@@ -86,8 +86,6 @@ public class PopupViewController: UIViewController {
         popup.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.center.equalToSuperview()
-            make.top.greaterThanOrEqualToSuperview().offset(44)
-            make.bottom.lessThanOrEqualToSuperview().offset(-44)
         }
     }
     
@@ -109,6 +107,7 @@ public class PopupViewController: UIViewController {
     private func initBackground() {
 
         backgroundView = UIView()
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.27)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))

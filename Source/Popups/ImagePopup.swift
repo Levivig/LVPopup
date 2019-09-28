@@ -61,11 +61,6 @@ class ImagePopup: BasePopup {
         imageView.image = image
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-    }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         initialize()
@@ -101,8 +96,8 @@ class ImagePopup: BasePopup {
         
         scrollView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(16)
-            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().offset(16)
+            make.centerX.top.equalToSuperview()
         }
     }
     
@@ -153,7 +148,7 @@ class ImagePopup: BasePopup {
             make.leading.equalToSuperview().offset(16)
             make.centerX.equalToSuperview()
             make.top.equalTo(imageView.snp.bottom).offset(8)
-            make.bottom.equalToSuperview().offset(-8)
+            make.bottom.equalToSuperview()
         }
     }
     
@@ -231,21 +226,21 @@ class ImagePopup: BasePopup {
     
     private func setScrollView(height: CGFloat) {
         scrollView.snp.remakeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
-            make.height.greaterThanOrEqualTo(height)
+            make.top.equalToSuperview().offset(16)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(height)
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.cornerRadius = 8
         
         let size = CGSize(width: self.width, height: slider.y + slider.height)
         scrollView.contentSize = size
         
-        let maxHeight = (UIApplication.shared.delegate?.window??.height ?? 0) - (minTopOffset + minBottomOffset)
+        let maxHeight = (UIApplication.shared.delegate?.window??.height ?? 0) - (minTopOffset + minBottomOffset) - (buttonHeight + 2 * buttonVerticalSpacing)
         
-        if size.height > maxHeight {
+        if size.height >= maxHeight {
             setScrollView(height: maxHeight)
         } else {
             setScrollView(height: size.height)

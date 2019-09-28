@@ -49,11 +49,6 @@ class Popup: BasePopup {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-    }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         initialize()
